@@ -1,9 +1,9 @@
 #!/bin/bash
 # change working directory to database directory
 cd ./database/$dbname
-
-if [[ `ls  | wc -l` >   0 ]] ; then
-echo  "**** Your Tables ****"
+let count=`ls  | wc -l`
+if [[ $count  >   0 ]] ; then
+echo  -e "${note}**** Your Tables ${count} ****${base}"
 ls -F
 else
 echo -e "${invalid} No Tables Found ${base}"

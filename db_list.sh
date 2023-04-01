@@ -3,7 +3,7 @@
 cd ./database/
 
 if [[ `ls  | wc -l` >   0 ]] ; then
-echo  "****Your Databases****"
+echo  -e "${note} ****Your Databases****${base}"
 ls -F   
 else
 echo -e "${invalid} No Databases Found ${base}"

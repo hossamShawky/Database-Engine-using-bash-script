@@ -1,8 +1,9 @@
 #!/bin/bash
 # exports red color for invalid operation and base for main color
-export invalid='\033[1;31m'
+export  invalid='\033[1;31m'
 export  base='\033[0m' 
-# main menu of engine.
+export  note='\033[0;34m' 
+# main menu of engine.echo "drop"
 # check if this is first time run script (create database dir)
 if [ ! -d database ] 
 then

@@ -1,6 +1,5 @@
 #!/bin/bash
-echo "You connected to  : ${dbname}"
-
+echo -e "${note} ****You connected to database : ${dbname} ***${base}" 
 # while true
 # do
  
@@ -12,15 +11,15 @@ source table_create.sh;;
 "List Tables" )
 source table_list.sh;;
 "Drop Table" )
-echo "drop";;
+source table_drop.sh;;
 "Insert into Table" )
-echo "insert" ;;
+source table_insert.sh ;;
 "Select From Table" )
-echo "select";;
+source table_select.sh ;;
 "Delete From Table" )
-echo "delete";;
+source table_delete.sh;;
  "Update Table" )
- echo "delete" ;;
+ source table_update.sh;;
  "Back To Menu" )
 source main_menu.sh
 ;;
