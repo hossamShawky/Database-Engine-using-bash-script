@@ -1,15 +1,11 @@
 #!/bin/bash
-# change working directory to database directory
-cd ./database/
-
-if [[ `ls  | wc -l` >   0 ]] ; then
-echo  -e "${note} ****Your Databases****${base}"
-ls -F   
+# check if there databases
+count=`ls ${path} | wc -l`
+if [[ $count >   0 ]] ; then
+echo  -e "${note} **** Your Databases [${count}] ****${base}"
+ls -F ${path}
 else
 echo -e "${invalid} No Databases Found ${base}"
 fi
-
-# return back to main directory&menu
-cd ..
+# return back to main menu
 source main_menu.sh   
- 
