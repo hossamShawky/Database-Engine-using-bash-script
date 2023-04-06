@@ -10,7 +10,6 @@ done
 while [[ $tablename == *" "* ]] ; do
 tablename="${tablename/ /_}"    
 done
-
 if [ -f $path"/"$dbname"/"$tablename ] ; then
 echo -e "${invalid} Table ${tablename} already exists ${base}" 
 else
@@ -20,7 +19,6 @@ echo -e "${note} Table ${tablename} created succssfully ${base}"
 read -p "Enter Num.Of Columns For Table ${tablename} : " numCols
 # check if input is valid [number]
 #try convert input to integer
-
 while ! [[ $numCols =~ ^[1-9][0-9]*$  ]]
 do
 echo -e "$invalid Invaild Number $base"
@@ -28,6 +26,13 @@ read -p "Enter Num.Of Columns For Table ${tablename} : " numCols
 done
 # convert numCols to intger [enable us to operate]
 let numCols=$numCols
+#Database Engine Tables accept at least two columns 
+#i don`t need make empty table (file)
+while [[ $numCols < 2 ]]
+do
+    echo -e "$invalid Minimum Number Of Columns Is 2 $base"
+    read -p "Enter Num.Of Columns For Table ${tablename} : " numCols
+done
 # by default first field name:id & constraint:PK
 # loop until numCols to get table columns name&type [string&int]
 echo -e "${note}Note that first column name is id and it is PK ${base}"
@@ -40,7 +45,7 @@ for ((i=2;i<=$numCols;i++))
     while [[ -z $colName || $colName =~ ^[0-9] || $colName == *['!''@#/$\"*{^})(+|,;:~`.%&/=-]>[<?']* ]]  
     do
             echo -e "${invalid} Invaild colName ${base}"
-            read -p "Enter Column Name : " colName
+            read -p "Enter Column ${i} Name : " colName
     done
 # end check col name
 # convert every space to _
@@ -102,6 +107,6 @@ done
 # end for
 done
 echo $record_type >> $path"/"$dbname"/"$tablename
-echo -e "${note} Your table meta data is : \n $record_name \n $record_type ${base}"
+echo -e "${note} Your table [${tablename}] meta data is : \n $record_name \n $record_type ${base}"
 fi
 source db_menu.sh
