@@ -1,14 +1,35 @@
-# Database-Engine (using bash script)
-bash-script project about database engine
+### Database-Engine (using bash script)
+Database-Engine is a simple DBMS that is written in Bash. It is designed and developed to provide basic functionality for data storage and retrieval.
+### Installatio & How To Use
+   #### - Clone the repository :
+  ```
+ git clone https://github.com/hossamShawky/Database-Engine-using-bash-script
+  ```
+   #### - Change Directory : 
+  ```
+  cd [your-local-directory]
+  ```
+  #### - Run :
+  ```
+  . main_menu.sh
+  ```
+### Main Menu Operations:
+  - create new database
+  - list databases
+  - connect database
+  - drop database
+  ### Connect Menu Operations:
+  - create new table
+  - list tables
+  - insert new record into table
+  - update record 
+  - select record
+  - select all records
+  - delete record
+  - delete all records
 
-# How To Use
-<li> $ ./main_menu.sh </li>
 
-# Available data types
+### Available data types
 
 <li> Integer </li>
 <li> String </li>
-
-# Contributors:
-<li> <a href="https://github.com/hossamShawky"> Hossam Mohammed Shawky </a> </li>
-<li> <a href="https://github.com/Merit516"> Merit Mekhail Nagiub Samy </a> </li>
