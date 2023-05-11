@@ -56,7 +56,15 @@ read value
                 source db_menu.sh;
             else
                     record[$i]=$value
-            fi    
+            fi  
+        # Float
+        elif [[ ${dataType[$i]} = "float" ]] ;  then
+            if [[ ! $value =~ ^[+-]?[0-9]+\.?[0-9]*$  ]] ; then
+                echo -e "${invalid}" ${colArray[$i]} " must be Float :) ${base}"
+                source db_menu.sh;
+            else
+                    record[$i]=$value
+            fi        
         fi
         # end if => loop remaining names
 done

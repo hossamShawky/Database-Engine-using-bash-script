@@ -80,7 +80,7 @@ do
 echo "*** Enter data type for [" ${colArray[$c]} "] filed : "
 c+=1
 # only support string and integer
-select choice in "string" "integer"
+select choice in "string" "integer" "float"
 do
 case $choice in
 "string" ) 
@@ -98,6 +98,15 @@ if [ $i -eq 2 ] ; then
 	record_type+=:integer
 fi
 break ;;		
+
+"float" )
+if [ $i -eq 2 ] ; then
+	record_type=integer:float
+	else 
+	record_type+=:float
+fi
+break;;
+
 * )
 		echo -e " ${invalid} Invaild data type ${base}"
 		continue;;

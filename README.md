@@ -33,3 +33,4 @@ Database-Engine is a simple DBMS that is written in Bash. It is designed and dev
 
 <li> Integer </li>
 <li> String </li>
+<li> Float </li>

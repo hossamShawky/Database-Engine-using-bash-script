@@ -64,6 +64,16 @@ elif [[ ${typeArray[$i]} = "integer" ]] ;  then
     else
             record[$i]=$value
     fi    
+
+# Float
+elif [[ ${typeArray[$i]} = "float" ]] ;  then
+    if [[ ! $value =~ ^[+-]?[0-9]+\.?[0-9]*$ ]] ; then
+        echo -e "${invalid}" ${colArray[$i]} " must be Float :) ${base}"
+        source db_menu.sh;
+    else
+            record[$i]=$value
+    fi    
+
 fi
 # end if => loop remaining names
 fi
