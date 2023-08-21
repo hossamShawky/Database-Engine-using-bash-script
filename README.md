@@ -36,8 +36,7 @@ Database-Engine is a simple DBMS that is written in Bash. It is designed and dev
 <li> Float </li>
 
 
-### You can use my image to run this project direct : 
+### You can use my image to run this project direct :  'For Test' 
   ```bash
-  docker pull hossam/databae-engine:latest
-  docker run --name ${USER}-Engine -itd hossam/databae-engine:latest
-  ```
+     docker run --name ${USER}-Engine -it --rm hossam23/databae-engine:latest	 
+ ```
